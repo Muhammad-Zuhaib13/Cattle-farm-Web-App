@@ -1,1 +1,359 @@
+:root {
+  --theme-bg-1: #8c5e0b;
+  --theme-bg-2: #331e04;
+  --font-roboto: "Roboto", sans-serif;
+  --font-courgette:'Courgette', cursive;
+  --gold: #ffb338;
+  --light-shadow: #77571d;
+  --dark-shadow: #3e2904;
+}
+.theme-bg-1 {
+  background-color: var(--theme-bg-1);
+}
+.theme-bg-2 {
+  background-color: var(--theme-bg-2);
+}
+.font-family-1{
+  font-family: var(--font-roboto);
+}
+.font-family-2{
+  font-family: var(--font-courgette);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+  font-family: var(--font-roboto);
+}
+.logo-size {
+  width: 100px;
+  height: 96px;
+}
+.ms-6 {
+  margin-left: 6rem;
+}
+.header-nav-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.header-nav-title h4 {
+  color: #ff851b;
+  font-size: 2.5rem;
+  text-shadow: 4px 4px 0px #373737;
+  mix-blend-mode: screen;
+}
+.main-navbar ul li a {
+  color: #ff851b;
+  transition: ease 0.4s;
+}
+.main-navbar ul li a:hover,
+.go-on-top a:hover {
+  color: #d6d6d6;
+}
+.hero-section-img {
+  background-image: url("../images/banner.jpg");
+  height: 420px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+.hero-text-wrapper h4{
+  font-size: 3.5rem;
+}
+.price h4 {
+  color: #ff851b;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+.img-width-height {
+  width: 575px !important;
+  height: 460px !important;
+  border-radius: 0.4rem !important;
+}
+.img-width-height {
+  width: 575px;
+  height: 500px;
+  border-radius: 0.4rem;
+}
+.go-on-top a {
+  text-decoration: none;
+  color: var(--theme-bg-1);
+  font-size: 1.4rem;
+  line-height: 6rem;
+  font-weight: 500;
+}
 
+@media only screen and (max-width: 768px) {
+  header {
+    width: 100%;
+  }
+  .header-nav-title h4 {
+    font-size: 2.5rem;
+}
+  .header-nav-title h4 {
+    font-size: 1.6rem;
+  }
+  .hero-section-img {
+    background-size: cover;
+    height: auto;
+  }
+  .hero-text-wrapper h4{
+    font-size: 2.5rem;
+  }
+  .cattle-info-section .container .py-4 .pt-md-5,
+  .mt-md-5 {
+    padding: 0;
+    margin: 0;
+  }
+  .cattle-info-section .container {
+    margin: 0;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .cattle-info-section .container .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    /* margin-right: 7%; */
+  }
+  .cattle-info-section .container .row .col-md-6 {
+    width: 100%;
+    padding: 1rem;
+  }
+  .price h4 {
+    margin-left: 9rem;
+  }
+  footer .col-6:nth-child(2) {
+    margin-left: -4rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  header {
+    width: 100%;
+  }
+  .hero-section-img {
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 75%;
+  }
+  .hero-text-wrapper h4{
+    font-size: 2.0rem;
+  }
+  .max-375 {
+    margin-top: 4rem;
+  }
+  .cattle-info-section .container .row {
+    margin-right: 0;
+  }
+  .img-width-height {
+    width: 550px !important;
+    height: 400px !important;
+    border-radius: 0.4rem !important;
+  }
+
+  .cattle-info-section .card {
+    width: 19rem !important;
+    /* margin-left: -0.7rem !important; */
+  }
+  footer .col-6:nth-child(2) {
+    margin-left: -3rem;
+  }
+  .title{
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  header {
+    width: 100%;
+  }
+  .header-nav-title h4 {
+    font-size: 1.5rem;
+  }
+  .hero-text-wrapper h4{
+    font-size: 1.5rem;
+  }
+  .img-width-height {
+    width: 525px !important;
+    height: 300px !important;
+    border-radius: 0.4rem !important;
+  }
+  .price h4 {
+    margin-left: 5rem;
+  }
+  .cattle-info-section .card {
+    width: 18rem !important;
+    /* margin-left: -1.9rem !important; */
+  }
+  footer .col-6:nth-child(2) {
+    margin-left: -2rem !important;
+  }
+  /* style="width:24rem */
+}
+/* .logo {
+    text-align: center;
+}  */
+
+/* .logo img {
+    width: 90px;
+    /* cursor: pointer; */
+/* padding: 10px 0px;
+} */
+
+
+/* .slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .slider-width {
+    width: 90%;
+} */
+
+/* .card-img {
+    height: 500px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+} */
+
+/* .splide__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+/* .thumbnails {
+    display: flex;
+    margin: 1rem auto 0;
+    padding: 0;
+    justify-content: center;
+} */
+
+
+/* .thumbnail {
+    width: 70px;
+    height: 50px;
+    overflow: hidden;
+    list-style: none;
+    margin: 0 0.2rem;
+    cursor: pointer;
+}
+
+
+.thumbnail img {
+    width: 100%;
+    height: auto;
+} */
+
+
+/* .text {
+    padding-top: 10px;
+}
+
+.cattle {
+    background-color: #e7e7e7;
+    text-align: center;
+}
+
+.cattle-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.info {
+    padding: 35px;
+}
+
+.cattle-details {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.btn {
+    padding: 12px 120px;
+    margin-top: 15px;
+    background-color: #ff851b;
+    color: white;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-primary:hover {
+    background-color: #ff851b;
+}
+.btn-primary:active {
+    background-color: #ff851b;
+}
+.btn-primary:focus {
+    background-color: #ff851b;
+}
+.transportation{
+    /* background-color: #e7e7e7; */
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+/* .transportation-res{
+    background-color: #e7e7e7;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+} */
+/* .delivery-details{
+    font-size: 18px;
+    font-weight: 600;
+} */
+/* .Buyer{
+    font-size: 16px;
+    font-weight: 400;
+} */
+/* .banner-img {
+  width: 100%;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+.banner-text {
+  text-align: center;
+  width: 500px;
+  color: white;
+}*/
+/* @media only screen and (max-width: 700px) {
+    .card-img {
+        height: 260px;
+    }
+}
+#main{
+    font-family:Arial;
+    width:500px;
+    display:block;
+    margin:0 auto;
+  }
+  
+  #slide-show img{
+    width:450px;
+    height: 350px;
+  }
+  #slider-nav img{
+    width: 100px;
+    height: 60px;
+  } 
