@@ -76,97 +76,22 @@ const cattle_infromation_section = async () => {
   const cattleDetailsCardDiv = document.getElementById(
     "cattle-details-card-div"
   );
-  // Generate unique IDs for each slider
-  const sliderNavId = "sliderNav" + Math.round(Math.random() * 100);
-  const sliderMainId = "sliderMain" + Math.round(Math.random() * 100);
 
   cattleInfo.map((cattle) => {
-    //       //Map for Slider Div
-    //       const { img_array } = cattle;
-    //       const sliderNavId = "sliderNav" + Math.round(Math.random() * 100);
-    //       const sliderMainId = "sliderMain" + Math.round(Math.random() * 100);
-    //       const createSlider = document.createElement("div");
-    //       createSlider.classList = [
-    //         "col-lg-7 col-xl-7 col-xxl-7 col-md-7 col-sm-12 col-12 align-self-center mt-5",
-    //       ];
-    //       createSlider.innerHTML = `
-    //     <div class="swiper_slider_container">
-    //     <div class="swiper mySwiper2" id="${sliderMainId}">
-    //       <div class="swiper-wrapper">
-    //         ${img_array
-    //           .map((img) => {
-    //             return `<div class="swiper-slide">
-    //                       <img src="${img}" class="img-fluid img-responsive" />
-    //                     </div>`;
-    //           })
-    //           .join("")}
-    //       </div>
-    //       <div class="swiper-button-next"></div>
-    //       <div class="swiper-button-prev"></div>
-    //     </div>
-    //     <div class="swiper mySwiper" id="${sliderNavId}">
-    //       <div class="swiper-wrapper">
-    //         ${img_array
-    //           .map((img) => {
-    //             return `<div class="swiper-slide">
-    //                       <img src="${img}" class="img-fluid img-responsive"/>
-    //                     </div>`;
-    //           })
-    //           .join("")}
-    //       </div>
-    //     </div>
-    //   </div>
-    // `;
-
-    //       cattleInfoRow.appendChild(createSlider);
-    //       // Initialize Swiper instances
-    //       new Swiper(`#${sliderMainId}`, {
-    //         loop: true,
-    //         spaceBetween: 10,
-    //         navigation: {
-    //           nextEl: `#${sliderMainId} .swiper-button-next`,
-    //           prevEl: `#${sliderMainId} .swiper-button-prev`,
-    //         },
-    //         thumbs: {
-    //           swiper: `#${sliderNavId}`,
-    //         },
-    //       });
-
-    //       new Swiper(`#${sliderNavId}`, {
-    //         loop: true,
-    //         spaceBetween: 10,
-    //         slidesPerView: 4,
-    //         freeMode: true,
-    //         watchSlidesProgress: true,
-    //         watchSlidesVisibility: true,
-    //         breakpoints: {
-    //           640: {
-    //             slidesPerView: 2,
-    //           },
-    //           768: {
-    //             slidesPerView: 3,
-    //           },
-    //           1024: {
-    //             slidesPerView: 4,
-    //           },
-    //         },
-    //       });
-
-    //  Cattle Image Column Div
     const { img_url, status } = cattle;
     const colCattleImgDiv = document.createElement("div");
     colCattleImgDiv.classList = [
-      "col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12 align-self-center mt-5 mx-auto position-relative",
+      "col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12 align-self-center mt-md-5 mx-auto position-relative",
     ];
     colCattleImgDiv.innerHTML = `
   <div class="cattle-img-section d-flex flex-wrap justify-content-center">
     ${
       status === "Deactivated"
         ? `<h4><span class="badge bg-danger position-absolute" style="z-index:1;">Sold Out</span></h4>
-            <img src="${img_url}" class="img-fluid img-responsive img-width-height" style="filter:opacity(0.5)"/>
+            <img src="${img_url}" class="img-fluid img-responsive img-width-height shadow" style="filter:opacity(0.5)"/>
             
         `
-        : `<img src="${img_url}" class="img-fluid img-responsive img-width-height"/>
+        : `<img src="${img_url}" class="img-fluid img-responsive img-width-height shadow"/>
         
         `
     }
@@ -194,7 +119,7 @@ const cattle_infromation_section = async () => {
       <div class="price ps-md-5 d-flex w-50 justify-content-center ms-md-5">
       <h4>Rs.${price}</h4>
     </div>
-    <div class="card d-grid mx-auto" style="width:24rem">
+    <div class="card d-grid mx-auto card-style" style="width:24rem">
       <div class="card-header bg-dark text-white-50">
         <h4 class="card-title">
           Cattle Information  
@@ -393,7 +318,7 @@ const cattle_infromation_section = async () => {
      <div class="form_submission_msgs">
       <!-- Modal Success Msg Start -->
       <div class="modal fade modal-style" id="modal_msg_success">
-        <div class="modal-dialog modal-sm text-success">
+        <div class="modal-dialog shadow-lg modal-sm text-success">
           <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
@@ -421,7 +346,7 @@ const cattle_infromation_section = async () => {
     <!-- Modal Success Msg End -->
             <!-- Modal Failed Msg Start -->
             <div class="modal fade modal-style" id="modal_msg_failed">
-              <div class="modal-dialog modal-sm text-danger">
+              <div class="modal-dialog shadow-lg modal-sm text-danger">
                 <div class="modal-content">
                   <!-- Modal Header -->
                   <div class="modal-header">
@@ -473,7 +398,7 @@ const cattle_infromation_section = async () => {
       </p>
        <div class="d-grid">
         <button type="button"
-          class="btn btn-warning"
+          class="btn button-style"
           data-bs-toggle="modal"
           data-bs-target="#cattle_form${id}" 
           id="btn-make-offer">Interested in Similar Cattle</button>
@@ -485,7 +410,7 @@ const cattle_infromation_section = async () => {
       </p>
        <div class="d-grid">
         <button type="button"
-          class="btn btn-warning"
+          class="btn button-style"
           data-bs-toggle="modal"
           data-bs-target="#cattle_form${id}" 
           id="btn-make-offer">Make an Offer</button>
@@ -504,92 +429,7 @@ const cattle_infromation_section = async () => {
       `;
     cattleInfoRow.appendChild(gapColDiv);
   });
-  // Map for Section Creation
-  // cattleInfo.map((cattle,index)=>{
-  //   // cattle_section.innerHTML="";
-  //   const {age, weight, birth, region, gender, price, cattle_status, img_array} = cattle;
-
-  // // // Main Container Div
-  // //   const containerDiv = document.createElement("div");
-  // //   containerDiv.classList = ['container my-3'];
-
-  // // // Main Row Div
-  // //   const rowDiv = document.createElement("div");
-  // //   rowDiv.classList = ['row justify-content-between pb-3 border border-secondary border-top-0 border-start-0 border-end-0 border-bottom-2']
-
-  // // // Slider Column Div
-  // //   const colCattleSliderDiv= document.createElement("div");
-  // //   colCattleSliderDiv.classList=['col-lg-6'];
-
-  // // Cattle Information Column Div
-  //   const colCattleInfoCardDiv= document.createElement("div");
-  //   colCattleInfoCardDiv.classList=['col-lg-2 col-xl-2 col-xxl-2 col-12']
-  //   colCattleInfoCardDiv.innerHTML=`
-  //   <div class="price" style="margin-left:130px">
-  //   <h4>Rs.${price}</h4>
-  // </div>
-  // <div class="card d-grid mx-auto" style="width:24rem">
-  //   <div class="card-header">
-  //     <h4 class="card-title">
-  //       Cattle Information
-  //     </h4>
-  //   </div>
-  //   <div class="card-body">
-  //   <h4><span class="badge bg-secondary">${cattle_status[0]}</span></h4>
-  //   <div class="clearfix">
-  //     <span class="float-start">Age: </span>
-  //     <span class="float-end">${age}</span>
-  //  </div>
-  //    <div class="clearfix">
-  //     <span class="float-start">Weight: </span>
-  //     <span class="float-end">${weight}</span>
-  //  </div>
-  //      <div class="clearfix">
-  //     <span class="float-start">Birth: </span>
-  //     <span class="float-end">${birth}</span>
-  //  </div>
-  //      <div class="clearfix">
-  //     <span class="float-start">Region: </span>
-  //     <span class="float-end">${region}</span>
-  //  </div>
-  //      <div class="clearfix">
-  //     <span class="float-start">Gender: </span>
-  //     <span class="float-end">${gender}</span>
-  //  </div>
-  //  <div class="d-grid">
-  //   <button class="btn btn-warning" id="btn-make-offer">Make an Offer</button>
-  // </div>
-  // <h4 class="card-title pt-3">Seller Details</h4>
-  // <div class="clearfix">
-  //   <span class="float-start">Seller:</span>
-  //   <span class="float-end">Zaman</span>
-  // </div>
-  // <div class="clearfix">
-  //   <span class="float-start">Seller Contact:</span>
-  //   <span class="float-end" tel="+(92)348-4681741">+(92)348-4681741</span>
-  // </div>
-  // <div class="clearfix">
-  //   <span class="float-start">Location:</span>
-  //   <span class="float-end">Korangi Karachi</span>
-  // </div>
-  // <h4 class="card-title pt-3"> Transportation & Delivery</h4>
-  // <div class="clearfix">
-  //   <span class="float-start bg-secondary">Transportation Responsibility</span>
-  //   <span class="float-end">Buyer</span>
-  // </div>
-  // </div>
-  //   </div>
-  // </div>
-
-  //   `;
-
-  //   cattleInfoRow.appendChild(colCattleInfoCardDiv);
-  //   // cattleInfoSectionDiv.appendChild(containerDiv);
-  //   // containerDiv.appendChild(rowDiv);
-  //   // rowDiv.appendChild(colCattleSliderDiv);
-  //   // rowDiv.appendChild(colCattleInfoCardDiv);
-
-  //   });
+ 
 };
 cattle_infromation_section();
 
