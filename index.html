@@ -25,18 +25,23 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./css/animate.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
       rel="stylesheet"
     />
+    <link
+    href="https://fonts.googleapis.com/css?family=Anton"
+    rel="stylesheet"
+  />
     <title>Zaman Cattle Farm</title>
   </head>
 
   <body>
     <!-- Header Section Start -->
-    <header class="header-section theme-bg-2" id="#top">
+    <header class="header-section gradient-dark-theme-bg" id="#top">
       <nav
         class="container-md container-lg container-xl container-fluid main-navbar d-flex pt-2"
       >
@@ -45,7 +50,14 @@
           <img src="images/logo.png" class="img-fluid logo-size" alt="" />
         </div>
         <div class="header-nav-title font-family-2">
-          <h4>Zaman Cattle Farm</h4>
+          <div class="nav-title">
+            <div class="shadows">
+              <span>z</span><span>a</span><span>m</span><span>a</span><span>n</span
+              ><span> </span><span>c</span><span>a</span><span>t</span><span>t</span
+              ><span>l</span><span>e</span><span> </span><span>f</span><span>a</span
+              ><span>r</span><span>m</span>
+            </div>
+          </div>
         </div>
         <!-- Navbar  Ul Start -->
         <!-- <ul class="nav justify-content-center w-75 align-self-center">
@@ -135,6 +147,10 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
     ></script>
+    <script src="./js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
     <script src="./js/app.js"></script>
   </body>
 </html>
