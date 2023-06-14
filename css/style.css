@@ -1,13 +1,19 @@
 :root {
   --theme-bg-1: #8c5e0b;
   --theme-bg-2: #331e04;
-  --theme-3:#ff851b;
+  --theme-3: #ff851b;
   --font-roboto: "Roboto", sans-serif;
-  --font-courgette:'Courgette', cursive;
+  --font-courgette: "Courgette", cursive;
   --gold: #ffb338;
   --light-shadow: #77571d;
   --dark-shadow: #3e2904;
-  --dark-grey-shadow:rgb(38, 57, 77) 0px 20px 30px -10px;
+  --dark-grey-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  --gradient-dark-theme-bg: conic-gradient(
+    from 105deg at 70% 0%,
+    #8c5e0b,
+    #603c07,
+    #331e04
+  );
 }
 .theme-bg-1 {
   background-color: var(--theme-bg-1);
@@ -15,11 +21,14 @@
 .theme-bg-2 {
   background-color: var(--theme-bg-2);
 }
-.font-family-1{
+.font-family-1 {
   font-family: var(--font-roboto);
 }
-.font-family-2{
+.font-family-2 {
   font-family: var(--font-courgette);
+}
+.gradient-dark-theme-bg {
+  background: var(--gradient-dark-theme-bg);
 }
 * {
   margin: 0;
@@ -29,6 +38,7 @@
 body {
   overflow-x: hidden;
   font-family: var(--font-roboto);
+  background-color: rgb(137 92 11 / 25%);
 }
 .logo-size {
   width: 100px;
@@ -41,12 +51,31 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
-.header-nav-title h4 {
+.nav-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shadows {
+  text-transform: uppercase;
+  text-shadow: 0px 0px -13px #ced0d3;
   color: #ff851b;
-  font-size: 2.5rem;
-  text-shadow: 4px 4px 0px #373737;
-  mix-blend-mode: screen;
+  letter-spacing: 0.1em;
+  font-family: "Anton", Arial, sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-transform: uppercase;
+  font-size: 2rem;
+  transition: all 0.25s ease-out;
+}
+
+.shadows:hover {
+  text-shadow: -16px 6px 15px #ced0d3;
 }
 .main-navbar ul li a {
   color: #ff851b;
@@ -63,20 +92,23 @@ body {
   background-size: cover;
   width: 100%;
 }
-.hero-text-wrapper h4{
+.hero-text-wrapper h4 {
   font-size: 3.5rem;
+  font-family: "Anton", Arial, sans-serif;
+  letter-spacing: 0.1rem;
 }
-.cattle-sell-title{
+.cattle-sell-title {
   font-size: 3.5rem;
-  color: var(--theme-3);
+  color: var(--dark-shadow);
   position: relative;
+  font-family: "Anton", Arial, sans-serif;
 }
-.cattle-sell-title::before{
+.cattle-sell-title::before {
   position: absolute;
   content: "";
   top: 85px;
-  left: 10px;
-  width: 372px;
+  left: 1px;
+  width: 341px;
   height: 16px;
   background: var(--gold);
   z-index: -1;
@@ -84,9 +116,11 @@ body {
   opacity: 0.5;
 }
 .price h4 {
-  color: #ff851b;
+  color: var(--dark-shadow);
   font-size: 2.5rem;
   font-weight: 500;
+  text-shadow: 2px 5px 5px var(--theme-bg-1);
+  font-family: "Anton", Arial, sans-serif;
 }
 .button-style {
   margin: 10px;
@@ -101,7 +135,12 @@ body {
   border: 0px;
   font-weight: 700;
   box-shadow: 0px 0px 14px -7px #f09819;
-  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  background-image: linear-gradient(
+    45deg,
+    var(--theme-bg-2) 0%,
+    var(--theme-bg-1) 51%,
+    var(--theme-bg-2) 100%
+  );
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
@@ -117,9 +156,9 @@ body {
 .button-style:active {
   transform: scale(0.95);
 }
-.card-style{
+.card-style {
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-} 
+}
 .img-width-height {
   width: 575px !important;
   height: 460px !important;
@@ -134,10 +173,11 @@ body {
 }
 .go-on-top a {
   text-decoration: none;
-  color: var(--theme-bg-1);
+  color: var(--theme-3);
   font-size: 1.4rem;
   line-height: 6rem;
   font-weight: 500;
+  font-family: "Anton", Arial, sans-serif;
 }
 
 @media only screen and (max-width: 768px) {
@@ -146,7 +186,7 @@ body {
   }
   .header-nav-title h4 {
     font-size: 2.5rem;
-}
+  }
   .header-nav-title h4 {
     font-size: 1.6rem;
   }
@@ -154,14 +194,14 @@ body {
     background-size: cover;
     height: auto;
   }
-  .hero-text-wrapper h4{
+  .hero-text-wrapper h4 {
     font-size: 2.5rem;
   }
   .cattle-info-section .container {
     width: 100%;
     margin: 0 auto;
-}
-  .cattle-sell-title{
+  }
+  .cattle-sell-title {
     font-size: 2.5rem;
   }
   .cattle-sell-title::before {
@@ -175,7 +215,7 @@ body {
     z-index: -1;
     border-bottom-left-radius: 6px;
     opacity: 0.5;
-}
+  }
   .cattle-info-section .container .py-4 .pt-md-5,
   .mt-md-5 {
     padding: 0;
@@ -188,8 +228,8 @@ body {
     margin-bottom: 0;
   }
   .img-width-height {
-    box-shadow:var(--dark-grey-shadow) ;
-    filter:brightness(1.099);
+    box-shadow: var(--dark-grey-shadow);
+    filter: brightness(1.099);
   }
   .cattle-info-section .container .row {
     display: flex;
@@ -221,28 +261,28 @@ body {
     background-repeat: no-repeat;
     background-position: 75%;
   }
-  .hero-text-wrapper h4{
-    font-size: 2.0rem;
+  .hero-text-wrapper h4 {
+    font-size: 2rem;
   }
-  .cattle-sell-title{
-    font-size: 2.0rem;
+  .cattle-sell-title {
+    font-size: 2rem;
   }
   .cattle-sell-title::before {
     position: absolute;
     content: "";
     top: 44px;
     left: 2px;
-    width: 216px;
+    width: 194px;
     height: 11px;
     background: var(--gold);
     z-index: -1;
     border-bottom-left-radius: 6px;
     opacity: 0.5;
-}
-.img-width-height{
-  box-shadow: var(--dark-grey-shadow);
-  filter:brightness(1.099);
-} 
+  }
+  .img-width-height {
+    box-shadow: var(--dark-grey-shadow);
+    filter: brightness(1.099);
+  }
   .max-375 {
     margin-top: 4rem;
   }
@@ -254,7 +294,9 @@ body {
     height: 400px !important;
     border-radius: 0.4rem !important;
   }
-
+  .shadows{
+    font-size:1.4rem !important;
+  }
   .cattle-info-section .card {
     width: 19rem !important;
     /* margin-left: -0.7rem !important; */
@@ -262,7 +304,7 @@ body {
   footer .col-6:nth-child(2) {
     margin-left: -3rem;
   }
-  .title{
+  .title {
     font-size: 22px;
   }
 }
@@ -273,25 +315,26 @@ body {
   .header-nav-title h4 {
     font-size: 1.5rem;
   }
-  .hero-text-wrapper h4{
+  .hero-text-wrapper h4 {
     font-size: 1.5rem;
+  }
+  .shadows{
+    font-size:1.4rem !important;
   }
   .img-width-height {
     width: 525px !important;
     height: 300px !important;
     border-radius: 0.4rem !important;
-    box-shadow:var(--dark-grey-shadow) !important;
-    filter:brightness(1.099);
+    box-shadow: var(--dark-grey-shadow) !important;
+    filter: brightness(1.099);
   }
   .price h4 {
     margin-left: 5rem;
   }
   .cattle-info-section .card {
-    width: 18rem !important;    
+    width: 18rem !important;
   }
   footer .col-6:nth-child(2) {
     margin-left: -2rem !important;
   }
-  
 }
-
